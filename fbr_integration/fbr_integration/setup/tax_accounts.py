@@ -22,11 +22,15 @@ def find_existing_gst_account(company):
     possible_names = ["GST", "Sales Tax", "General Sales Tax"]
 
     for name in possible_names:
-        acc = frappe.db.get_value("Account", {
-            "company": company,
-            "account_name": ["like", f"%{name}%"],
-            "is_group": 0
-        })
+        acc = frappe.db.get_value(
+            "Account",
+            {
+                "company": company,
+                "account_name": ["like", f"%{name}%"],
+                "is_group": 0
+            },
+            "name"
+        )
         if acc:
             return acc
 
@@ -37,7 +41,7 @@ def create_tax_accounts_for_company(company):
     company_doc = frappe.get_doc("Company", company)
     abbr = company_doc.abbr
 
-    # ? Find DUTIES AND TAXES group
+    # ✅ Find "Duties and Taxes" group
     parent_account = frappe.db.get_value(
         "Account",
         {
@@ -58,21 +62,27 @@ def create_tax_accounts_for_company(company):
     for acc_name, tax_rate in TAX_ACCOUNTS:
         full_name = f"{acc_name} - {abbr}"
 
-        # ? SPECIAL HANDLING FOR GST
+        # ✅ SPECIAL HANDLING FOR GST
         if acc_name == "General Sales Tax":
             existing_gst = find_existing_gst_account(company)
 
             if existing_gst:
-                # ? Rename existing GST Account
                 frappe.rename_doc("Account", existing_gst, full_name, force=True)
+
+                # ✅ FORCE GST ACCOUNT TYPE TO TAX
+                gst_acc = frappe.get_doc("Account", full_name)
+                gst_acc.account_type = "Tax"
+                gst_acc.save(ignore_permissions=True)
+
                 gl_account = full_name
+                tax_rate = 18  # ✅ FORCE GST TO 18%
             else:
                 gl_account = create_gl_account(acc_name, company, abbr, parent_account)
 
         else:
             gl_account = create_gl_account(acc_name, company, abbr, parent_account)
 
-        # ? Ensure Item Tax Template @ Correct Rate
+        # ✅ CREATE / UPDATE ITEM TAX TEMPLATE
         if tax_rate > 0:
             create_or_update_item_tax_template(
                 tax_name=acc_name,
@@ -94,18 +104,28 @@ def create_gl_account(account_name, company, abbr, parent_account):
             "company": company,
             "parent_account": parent_account,
             "is_group": 0,
+
+            # ✅ CRITICAL FIX
+            "account_type": "Tax",
+
             "root_type": "Liability",
             "report_type": "Balance Sheet"
         })
         acc.insert(ignore_permissions=True)
         return acc.name
 
+    else:
+        # ✅ Ensure existing account is also marked as TAX
+        acc = frappe.get_doc("Account", full_name)
+        acc.account_type = "Tax"
+        acc.save(ignore_permissions=True)
+
     return full_name
 
 
 def create_or_update_item_tax_template(tax_name, company, gl_account, tax_rate):
     """
-    Ensures Item Tax Template exists and GST is exactly 18%
+    Ensures Item Tax Template exists and GST is exactly enforced to 18%
     """
     template_name = f"{tax_name} - {company}"
 
@@ -117,7 +137,8 @@ def create_or_update_item_tax_template(tax_name, company, gl_account, tax_rate):
             "taxes": [
                 {
                     "tax_type": gl_account,
-                    "tax_rate": tax_rate
+                    "tax_rate": tax_rate,
+                    "charge_type": "On Net Total"  # ✅ REQUIRED
                 }
             ]
         })
@@ -129,10 +150,12 @@ def create_or_update_item_tax_template(tax_name, company, gl_account, tax_rate):
         if tpl.taxes:
             tpl.taxes[0].tax_type = gl_account
             tpl.taxes[0].tax_rate = tax_rate
+            tpl.taxes[0].charge_type = "On Net Total"
         else:
             tpl.append("taxes", {
                 "tax_type": gl_account,
-                "tax_rate": tax_rate
+                "tax_rate": tax_rate,
+                "charge_type": "On Net Total"
             })
 
         tpl.save(ignore_permissions=True)

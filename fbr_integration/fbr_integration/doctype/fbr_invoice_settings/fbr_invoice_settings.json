@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "creation": "2025-11-18 06:38:23.180894",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "column_break_dodg",
+  "ssl_applied",
+  "section_break_kqlz",
+  "integration_type",
+  "section_break_xdzu",
+  "sandbox_api_url",
+  "sandbox_security_token",
+  "column_break_nrjt",
+  "production_api_url",
+  "production_security_token",
+  "sandbox"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "column_break_dodg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "ssl_applied",
+   "fieldtype": "Check",
+   "label": "SSL Applied"
+  },
+  {
+   "fieldname": "section_break_kqlz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "integration_type",
+   "fieldtype": "Select",
+   "label": "Integration Type",
+   "options": "Production\nSandbox"
+  },
+  {
+   "fieldname": "section_break_xdzu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.integration_type == \"Sandbox\"",
+   "description": "Post invoice API Configuration\n<ol><li>This API is used to submit and post invoice data to FBR system</li><li><b>Example URL:</b> https://gw.fbr.gov.pk/di_data/v1/di/postinvoicedata_sb</li></ol>",
+   "fieldname": "sandbox_api_url",
+   "fieldtype": "Data",
+   "label": "Sandbox API URL"
+  },
+  {
+   "depends_on": "eval:doc.integration_type == \"Sandbox\"",
+   "description": "Post invoice API Configuration\n<ol><li>Requires seperate credentials from the validate API</li></ol>",
+   "fieldname": "sandbox_security_token",
+   "fieldtype": "Data",
+   "label": "Sandbox Security Token"
+  },
+  {
+   "fieldname": "column_break_nrjt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.integration_type == \"Production\"",
+   "description": "Example URL: https://gw.fbr.gov.pk/di_data/v1/di/postinvoicedata",
+   "fieldname": "production_api_url",
+   "fieldtype": "Data",
+   "label": "Production API URL"
+  },
+  {
+   "depends_on": "eval:doc.integration_type == \"Production\"",
+   "fieldname": "production_security_token",
+   "fieldtype": "Data",
+   "label": "Production Security Token"
+  },
+  {
+   "depends_on": "eval:doc.integration_type == \"Sandbox\"",
+   "fieldname": "sandbox",
+   "fieldtype": "Small Text",
+   "label": "Sandbox"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-12-04 13:48:05.275406",
+ "modified_by": "Administrator",
+ "module": "FBR Integration",
+ "name": "FBR Invoice Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

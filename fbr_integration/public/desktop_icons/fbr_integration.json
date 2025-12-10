@@ -1,0 +1,21 @@
+{
+ "app": "fbr_integration",
+ "creation": "2025-11-17 13:19:04.327790",
+ "docstatus": 0,
+ "doctype": "Desktop Icon",
+ "hidden": 0,
+ "icon": "fbr_integration",
+ "icon_type": "Link",
+ "idx": 3,
+ "label": "FBR Integration",
+ "link_to": "FBR Integration",
+ "link_type": "Workspace",
+ "logo_url": "/assets/fbr_integration/desktop_icons/fbr_integration.svg",
+ "modified": "2025-11-17 17:38:19.203107",
+ "modified_by": "Administrator",
+ "name": "FBR Integration",
+ "owner": "Administrator",
+ "parent_icon": "",
+ "roles": [],
+ "standard": 1
+}

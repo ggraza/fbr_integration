@@ -1,0 +1,22 @@
+[
+  {
+    "doctype": "Tax Payer Type",
+    "name": "Registered",
+    "Tax Payer Type": "Registered"
+  },
+  {
+    "doctype": "Tax Payer Type",
+    "name": "Unregistered",
+    "Tax Payer Type": "Unregistered"
+  },
+  {
+    "doctype": "Tax Payer Type",
+    "name": "Unregistered Distributor",
+    "Tax Payer Type": "Unregistered Distributor"
+  },
+  {
+    "doctype": "Tax Payer Type",
+    "name": "Retail Consumer",
+    "Tax Payer Type": "Retail Consumer"
+  }
+]

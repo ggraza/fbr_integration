@@ -1,0 +1,22 @@
+[
+  {
+    "doctype": "Invoice Type",
+    "name": "Sale Invoice",
+    "Invoice Type": "Sale Invoice"
+  },
+  {
+    "doctype": "Invoice Type",
+    "name": "Credit Note",
+    "Invoice Type": "Credit Note"
+  },
+  {
+    "doctype": "Invoice Type",
+    "name": "Debit Note",
+    "Invoice Type": "Debit Note"
+  },
+  {
+    "doctype": "Invoice Type",
+    "name": "STWH",
+    "Invoice Type": "STWH"
+  }
+]

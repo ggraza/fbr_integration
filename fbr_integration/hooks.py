@@ -4,13 +4,22 @@ app_publisher = "G2Virtu Software Solution Provider Lahore Pakistan"
 app_description = "FBR integration is the process of connecting a business\'s transactional systems, such as Point of Sale (POS) or accounting software, directly to the Federal Board of Revenue (FBR) of Pakistan\'s central database."
 app_email = "info@g2virtu.com"
 app_license = "MIT"
+source_link = "https://github.com/ggraza/fbr_integration"
+app_logo_url = "/assets/fbr_integration/images/fbr_integration.svg"
+
+
+develop_version = "14.x.x-develop"
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/fbr_integration/css/fbr_integration.css"
-# app_include_js = "/assets/fbr_integration/js/fbr_integration.js"
+# app_include_js = "/assets/fbr_integration/js/qrcode.js"
+app_include_js = [
+    "/assets/fbr_integration/js/global_form_controls.js",
+    "/assets/fbr_integration/js/qrcode.js"
+]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/fbr_integration/css/fbr_integration.css"
@@ -27,7 +36,12 @@ app_license = "MIT"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+
+doctype_js = {
+    "Sales Invoice": "public/js/sales_invoice_fbr.js"
+}
+
+
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -62,6 +76,7 @@ app_license = "MIT"
 # ------------
 
 # before_install = "fbr_integration.install.before_install"
+after_install = "fbr_integration.fbr_integration.setup.tax_accounts.create_tax_accounts_for_all_companies"
 # after_install = "fbr_integration.install.after_install"
 
 # Uninstallation
@@ -115,6 +130,15 @@ app_license = "MIT"
 # Document Events
 # ---------------
 # Hook on document methods and events
+
+doc_events = {
+    "Sales Invoice": {
+        "before_save": "fbr_integration.fbr_integration.doc_events.sales_invoice.before_save_sales_invoice"
+    },
+    "Company": {
+        "after_insert": "fbr_integration.fbr_integration.doc_events.company.after_insert_company"
+    }
+}
 
 # doc_events = {
 # 	"*": {

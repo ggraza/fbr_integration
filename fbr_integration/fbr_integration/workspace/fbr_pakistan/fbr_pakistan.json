@@ -1,0 +1,321 @@
+{
+ "charts": [
+  {
+   "chart_name": "Outgoing Bills (Sales Invoice)",
+   "label": "Sales"
+  }
+ ],
+ "content": "[{\"id\":\"cJigdSD9mh\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">FBR Pakistan</span>\",\"col\":12}},{\"id\":\"0yCFQzM2yx\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Sales\",\"col\":12}},{\"id\":\"nVBkn7nfDw\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"iaDE9Z6T6H\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Annual Sales\",\"col\":4}},{\"id\":\"2loosl_UVD\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Outgoing Bills\",\"col\":4}},{\"id\":\"K7aFEpi_CL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales Orders to Bill\",\"col\":4}},{\"id\":\"SE-dj_Y3i4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"VSs2JE--nV\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Tax Accounts\",\"col\":4}},{\"id\":\"oj7gby7po4\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Sales Taxes and Charges Template\",\"col\":4}},{\"id\":\"L40uNNWSw2\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Item Tax Template\",\"col\":4}},{\"id\":\"SRX9ZUO6DA\",\"type\":\"card\",\"data\":{\"card_name\":\"Customer & Items\",\"col\":4}},{\"id\":\"gqR64-_9g2\",\"type\":\"card\",\"data\":{\"card_name\":\"FBR Data\",\"col\":4}}]",
+ "creation": "2025-11-27 14:33:45.038200",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "list-alt",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "FBR Pakistan",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "FBR Invoice Settings",
+   "link_count": 0,
+   "link_to": "FBR Invoice Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "FBR UoM",
+   "link_count": 0,
+   "link_to": "FBR UoM",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Buyer Province",
+   "link_count": 0,
+   "link_to": "Buyer Province",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "HS Code",
+   "link_count": 0,
+   "link_to": "HS Code",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Invoice Type",
+   "link_count": 0,
+   "link_to": "Invoice Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SRO Item SNo",
+   "link_count": 0,
+   "link_to": "SRO Item SNo",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SRO Schedule No",
+   "link_count": 0,
+   "link_to": "SRO Schedule No",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sale Type",
+   "link_count": 0,
+   "link_to": "Sale Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Scenario ID",
+   "link_count": 0,
+   "link_to": "Scenario ID",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tax Payer Type",
+   "link_count": 0,
+   "link_to": "Tax Payer Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "FBR Data",
+   "link_count": 10,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "FBR Invoice Settings",
+   "link_count": 0,
+   "link_to": "FBR Invoice Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "FBR UoM",
+   "link_count": 0,
+   "link_to": "FBR UoM",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Buyer Province",
+   "link_count": 0,
+   "link_to": "Buyer Province",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "HS Code",
+   "link_count": 0,
+   "link_to": "HS Code",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Invoice Type",
+   "link_count": 0,
+   "link_to": "Invoice Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SRO Item SNo",
+   "link_count": 0,
+   "link_to": "SRO Item SNo",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SRO Schedule No",
+   "link_count": 0,
+   "link_to": "SRO Schedule No",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sale Type",
+   "link_count": 0,
+   "link_to": "Sale Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Scenario ID",
+   "link_count": 0,
+   "link_to": "Scenario ID",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tax Payer Type",
+   "link_count": 0,
+   "link_to": "Tax Payer Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer & Items",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer",
+   "link_count": 0,
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer Group",
+   "link_count": 0,
+   "link_to": "Customer Group",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Item",
+   "link_count": 0,
+   "link_to": "Item",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Item Group",
+   "link_count": 0,
+   "link_to": "Item Group",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-12-04 01:35:19.120074",
+ "modified_by": "Administrator",
+ "module": "FBR Integration",
+ "name": "FBR Pakistan",
+ "number_cards": [
+  {
+   "label": "Annual Sales",
+   "number_card_name": "Annual Sales"
+  },
+  {
+   "label": "Total Outgoing Bills",
+   "number_card_name": "Total Outgoing Bills"
+  },
+  {
+   "label": "Sales Orders to Bill",
+   "number_card_name": "Sales Orders to Bill"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Account",
+   "label": "Tax Accounts",
+   "quick_list_filter": "[[\"Account\",\"account_type\",\"=\",\"Tax\",false]]"
+  },
+  {
+   "document_type": "Sales Taxes and Charges Template",
+   "label": "Sales Taxes and Charges Template",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Item Tax Template",
+   "label": "Item Tax Template",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 3.0,
+ "shortcuts": [],
+ "title": "FBR Pakistan"
+}
